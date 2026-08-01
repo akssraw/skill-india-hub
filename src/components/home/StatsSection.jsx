@@ -93,15 +93,15 @@ const StatsSection = () => {
               <div
                 key={stat.id}
                 data-stat-card
-                className="card p-6 sm:p-8 text-center flex flex-col items-center gap-3 group hover:-translate-y-1 transition-transform duration-300"
+                className="card p-4 sm:p-6 lg:p-8 text-center flex flex-col items-center gap-2.5 sm:gap-3 group hover:-translate-y-1 transition-transform duration-300"
               >
                 {Icon && (
-                  <div className={`w-12 h-12 rounded-xl ${c.bg} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                    <Icon size={22} className={c.icon} />
+                  <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl ${c.bg} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                    <Icon size={20} className={`${c.icon} sm:w-[22px] sm:h-[22px]`} />
                   </div>
                 )}
 
-                <div className={`font-display font-black text-3xl sm:text-4xl tracking-tight ${c.value}`}>
+                <div className={`font-display font-black text-2xl sm:text-3xl lg:text-4xl tracking-tight ${c.value}`}>
                   <span
                     data-counter
                     data-target={stat.value}
@@ -111,7 +111,7 @@ const StatsSection = () => {
                   </span>
                 </div>
 
-                <p className="text-slate-500 text-xs sm:text-sm font-medium">{stat.label}</p>
+                <p className="text-slate-500 text-[11px] sm:text-xs lg:text-sm font-medium leading-tight">{stat.label}</p>
               </div>
             );
           })}

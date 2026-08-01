@@ -129,7 +129,7 @@ const SchemesSpotlight = () => {
               <div
                 key={acronym}
                 data-scheme-card
-                className="card p-7 flex flex-col gap-5 hover:-translate-y-1 transition-transform duration-300"
+                className="card p-5 sm:p-7 flex flex-col gap-5 hover:-translate-y-1 transition-transform duration-300"
               >
                 {/* Header */}
                 <div className="flex items-start gap-4">
@@ -145,11 +145,11 @@ const SchemesSpotlight = () => {
                 </div>
 
                 {/* Stats row */}
-                <div className={`grid grid-cols-3 gap-3 p-3 rounded-xl ${c.bg} border ${c.border}`}>
+                <div className={`grid grid-cols-3 gap-2 sm:gap-3 p-2.5 sm:p-3 rounded-xl ${c.bg} border ${c.border}`}>
                   {stats.map(s => (
                     <div key={s.label} className="text-center">
-                      <div className={`font-display font-black text-lg ${c.stat}`}>{s.val}</div>
-                      <div className="text-slate-500 text-[10px] leading-tight">{s.label}</div>
+                      <div className={`font-display font-black text-sm sm:text-base lg:text-lg ${c.stat}`}>{s.val}</div>
+                      <div className="text-slate-500 text-[10px] leading-tight mt-0.5">{s.label}</div>
                     </div>
                   ))}
                 </div>

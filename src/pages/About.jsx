@@ -214,14 +214,14 @@ const About = () => {
             {STATS.map(stat => {
               const Icon = STAT_ICON_MAP[stat.icon];
               return (
-                <div key={stat.id} className="text-center p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors duration-300">
-                  {Icon && <Icon size={24} className="text-primary-400 mx-auto mb-3" />}
-                  <div className="font-display font-black text-3xl sm:text-4xl text-white mb-1">
+                <div key={stat.id} className="text-center p-4 sm:p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors duration-300">
+                  {Icon && <Icon size={20} className="text-primary-400 mx-auto mb-2 sm:mb-3" />}
+                  <div className="font-display font-black text-2xl sm:text-3xl lg:text-4xl text-white mb-1">
                     <span data-counter data-target={stat.value} data-suffix={stat.suffix}>
                       0{stat.suffix}
                     </span>
                   </div>
-                  <p className="text-white/50 text-xs font-medium">{stat.label}</p>
+                  <p className="text-white/50 text-[11px] sm:text-xs font-medium leading-tight">{stat.label}</p>
                 </div>
               );
             })}
