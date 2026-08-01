@@ -203,6 +203,26 @@
                 linear-gradient(135deg, #10b981, #6366f1) border-box;
     border: 2px solid transparent;
   }
+
+  /* Hardware acceleration for mobile cards & animations */
+  .card, .card-glass, [data-hero-pill], [data-stat-card] {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+}
+
+/* ─── Touch Device Scrolling Optimizations ────────────────── */
+@media (pointer: coarse), (max-width: 768px) {
+  html, body {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: none;
+  }
+
+  /* Simplify backdrop blur on low-power mobile GPUs */
+  .card-glass {
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
 }
 
 /* ─── Reduced Motion ────────────────────────────────────── */

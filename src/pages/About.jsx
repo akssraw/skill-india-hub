@@ -81,10 +81,17 @@ const About = () => {
         const target = parseInt(counter.dataset.target, 10);
         const suffix = counter.dataset.suffix || '';
         const obj    = { val: 0 };
+        let lastVal  = -1;
         gsap.to(obj, {
-          val: target, duration: 2, ease: 'power2.out',
-          onUpdate: () => { counter.textContent = Math.round(obj.val).toLocaleString('en-IN') + suffix; },
-          scrollTrigger: { trigger: statsRef.current, start: 'top 75%', once: true },
+          val: target, duration: 1.8, ease: 'power2.out',
+          onUpdate: () => {
+            const current = Math.round(obj.val);
+            if (current !== lastVal) {
+              lastVal = current;
+              counter.textContent = current.toLocaleString('en-IN') + suffix;
+            }
+          },
+          scrollTrigger: { trigger: statsRef.current, start: 'top 80%', once: true },
         });
       });
 

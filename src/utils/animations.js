@@ -103,8 +103,9 @@ export const staggerCards = (targets, trigger, options = {}) => {
 
 // ─── Number Counter ──────────────────────────────────────────
 export const countUp = (target, endValue, options = {}) => {
-  const { duration = 2, prefix = '', suffix = '', trigger } = options;
+  const { duration = 1.8, prefix = '', suffix = '', trigger } = options;
   const obj = { val: 0 };
+  let lastVal = -1;
 
   const anim = gsap.to(obj, {
     val:      endValue,
@@ -112,15 +113,18 @@ export const countUp = (target, endValue, options = {}) => {
     ease:     'power2.out',
     paused:   !!trigger,
     onUpdate: () => {
-      const formatted = Math.round(obj.val).toLocaleString('en-IN');
-      target.textContent = `${prefix}${formatted}${suffix}`;
+      const current = Math.round(obj.val);
+      if (current !== lastVal) {
+        lastVal = current;
+        target.textContent = `${prefix}${current.toLocaleString('en-IN')}${suffix}`;
+      }
     },
   });
 
   if (trigger) {
     ScrollTrigger.create({
       trigger,
-      start:   'top 80%',
+      start:   'top 85%',
       once:    true,
       onEnter: () => anim.play(),
     });

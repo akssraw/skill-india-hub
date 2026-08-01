@@ -24,33 +24,38 @@ const StatsSection = () => {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     const ctx = gsap.context(() => {
-      // Animate each counter on scroll
+      // Animate each counter on scroll with high-performance DOM update caching
       el.querySelectorAll('[data-counter]').forEach((counter) => {
-        const target   = parseInt(counter.dataset.target, 10);
-        const suffix   = counter.dataset.suffix || '';
-        const obj      = { val: 0 };
+        const target = parseInt(counter.dataset.target, 10);
+        const suffix = counter.dataset.suffix || '';
+        const obj    = { val: 0 };
+        let lastVal  = -1;
 
         gsap.to(obj, {
           val: target,
-          duration: prefersReduced ? 0 : 2.2,
+          duration: prefersReduced ? 0 : 1.8,
           ease: 'power2.out',
           onUpdate: () => {
-            counter.textContent = Math.round(obj.val).toLocaleString('en-IN') + suffix;
+            const current = Math.round(obj.val);
+            if (current !== lastVal) {
+              lastVal = current;
+              counter.textContent = current.toLocaleString('en-IN') + suffix;
+            }
           },
           scrollTrigger: {
             trigger: el,
-            start: 'top 75%',
-            once:  true,
+            start: 'top 80%',
+            once: true,
           },
         });
       });
 
       // Section fade in
       gsap.fromTo(el.querySelectorAll('[data-stat-card]'),
-        { opacity: 0, y: 40 },
+        { opacity: 0, y: 30 },
         {
-          opacity: 1, y: 0, stagger: 0.1, duration: 0.6, ease: 'power2.out',
-          scrollTrigger: { trigger: el, start: 'top 80%', once: true },
+          opacity: 1, y: 0, stagger: 0.08, duration: 0.5, ease: 'power2.out',
+          scrollTrigger: { trigger: el, start: 'top 85%', once: true },
         }
       );
     }, el);
