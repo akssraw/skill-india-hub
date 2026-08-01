@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://skillindiahub.in/sitemap.xml

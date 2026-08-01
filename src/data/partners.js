@@ -1,0 +1,18 @@
+export const PARTNERS = [
+  { id: 'p-01',  name: 'NSDC',             abbr: 'NSDC',        color: '#1a56db' },
+  { id: 'p-02',  name: 'Infosys',          abbr: 'Infosys',     color: '#007cc5' },
+  { id: 'p-03',  name: 'TCS',              abbr: 'TCS',         color: '#e31837' },
+  { id: 'p-04',  name: 'Wipro',            abbr: 'Wipro',       color: '#341c60' },
+  { id: 'p-05',  name: 'NASSCOM',          abbr: 'NASSCOM',     color: '#003087' },
+  { id: 'p-06',  name: 'BHEL',             abbr: 'BHEL',        color: '#005baa' },
+  { id: 'p-07',  name: 'Maruti Suzuki',    abbr: 'Maruti',      color: '#003087' },
+  { id: 'p-08',  name: 'Apollo Hospitals', abbr: 'Apollo',      color: '#0072bb' },
+  { id: 'p-09',  name: 'Reliance Retail',  abbr: 'Reliance',    color: '#d71920' },
+  { id: 'p-10',  name: 'Taj Hotels',       abbr: 'Taj',         color: '#6d2077' },
+  { id: 'p-11',  name: 'Google',           abbr: 'Google',      color: '#4285f4' },
+  { id: 'p-12',  name: 'Microsoft',        abbr: 'Microsoft',   color: '#00a1f1' },
+  { id: 'p-13',  name: 'Amazon',           abbr: 'Amazon',      color: '#ff9900' },
+  { id: 'p-14',  name: 'Siemens',          abbr: 'Siemens',     color: '#009999' },
+  { id: 'p-15',  name: 'ICAR',             abbr: 'ICAR',        color: '#228b22' },
+  { id: 'p-16',  name: 'NABARD',           abbr: 'NABARD',      color: '#0066cc' },
+];
