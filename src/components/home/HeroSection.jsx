@@ -78,130 +78,137 @@ const HeroSection = () => {
       <div className="absolute top-1/2  right-[30%] w-[200px] h-[200px] rounded-full bg-accent-400/10  blur-[60px] pointer-events-none" />
 
       <div ref={containerRef} className="container-custom relative z-10 py-24 lg:py-32">
-        <div className="max-w-5xl mx-auto">
-
-          {/* Top badge */}
-          <div data-hero-badge className="opacity-0 flex flex-wrap items-center gap-3 mb-6">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-50 border border-primary-100/80 text-primary-700 text-sm font-semibold shadow-sm">
-              <Sparkles size={14} className="text-primary-500" />
-              Skill India Mission 2026
-              <span className="w-1.5 h-1.5 rounded-full bg-primary-500 animate-pulse" />
-            </span>
-            <div className="hidden sm:flex items-center gap-1.5 text-xs font-semibold text-slate-500 bg-slate-100/80 px-3 py-1.5 rounded-full border border-slate-200/60">
-              <span className="text-primary-600">Dream</span> → 
-              <span className="text-secondary-600">Learn</span> → 
-              <span className="text-accent-600">Certify</span> → 
-              <span className="text-slate-900 font-bold">Get Hired</span>
-            </div>
-          </div>
-
-          {/* Headline */}
-          <h1 className="font-display font-black text-slate-900 leading-[1.02] tracking-tight mb-6">
-            <div className="overflow-hidden">
-              <span data-hero-word className="inline-block opacity-0 text-5xl sm:text-7xl lg:text-8xl font-black">
-                Dream. Learn.{' '}
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 max-w-6xl mx-auto">
+          
+          {/* Left Column: Text & Content */}
+          <div className="w-full lg:w-[62%]">
+            {/* Top badge */}
+            <div data-hero-badge className="opacity-0 flex flex-wrap items-center gap-3 mb-6">
+              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-50 border border-primary-100/80 text-primary-700 text-sm font-semibold shadow-sm">
+                <Sparkles size={14} className="text-primary-500" />
+                Skill India Mission 2026
+                <span className="w-1.5 h-1.5 rounded-full bg-primary-500 animate-pulse" />
               </span>
-              <span data-hero-word className="inline-block opacity-0 text-5xl sm:text-7xl lg:text-8xl text-gradient-green font-black">
-                Certify.
-              </span>
-            </div>
-            <div className="overflow-hidden">
-              <span data-hero-word className="inline-block opacity-0 text-5xl sm:text-7xl lg:text-8xl font-black">
-                Get{' '}
-              </span>
-              <span data-hero-word className="inline-block opacity-0 text-5xl sm:text-7xl lg:text-8xl text-gradient-hero font-black">
-                Hired.
-              </span>
-            </div>
-          </h1>
-
-          {/* Subheadline */}
-          <p
-            data-hero-sub
-            className="opacity-0 text-lg sm:text-xl text-slate-500 leading-relaxed max-w-2xl mb-10"
-          >
-            India's most comprehensive platform connecting youth with vocational training,
-            internships, certifications and real employment — powered by the{' '}
-            <span className="text-primary-600 font-semibold">Skill India Mission</span>.
-          </p>
-
-          {/* CTAs */}
-          <div className="flex flex-wrap items-center gap-4 mb-16">
-            <div data-hero-cta className="opacity-0">
-              <Button
-                as={Link}
-                to="/explore"
-                variant="primary"
-                size="lg"
-                className="shadow-glow-green"
-                iconRight={<ArrowRight size={18} />}
-              >
-                Explore Opportunities
-              </Button>
-            </div>
-            <div data-hero-cta className="opacity-0">
-              <Button
-                as={Link}
-                to="/roadmaps"
-                variant="outline"
-                size="lg"
-              >
-                View Career Roadmaps
-              </Button>
-            </div>
-          </div>
-
-          {/* Social proof strip */}
-          <div data-hero-cta className="opacity-0 flex flex-wrap items-center gap-6 text-sm text-slate-500">
-            <div className="flex items-center gap-2">
-              <div className="flex -space-x-2">
-                {['PS', 'RV', 'AK', 'MF', 'SD'].map((initials, i) => (
-                  <div
-                    key={i}
-                    className="w-8 h-8 rounded-full border-2 border-white flex items-center justify-center text-[10px] font-bold text-white"
-                    style={{ background: ['#10b981','#6366f1','#f59e0b','#10b981','#6366f1'][i] }}
-                  >
-                    {initials}
-                  </div>
-                ))}
+              <div className="hidden sm:flex items-center gap-1.5 text-xs font-semibold text-slate-500 bg-slate-100/80 px-3 py-1.5 rounded-full border border-slate-200/60">
+                <span className="text-primary-600">Dream</span> → 
+                <span className="text-secondary-600">Learn</span> → 
+                <span className="text-accent-600">Certify</span> → 
+                <span className="text-slate-900 font-bold">Get Hired</span>
               </div>
-              <span><strong className="text-slate-900">14.5 Cr+</strong> youth trained</span>
             </div>
-            <span className="dot-separator hidden sm:inline-block" />
-            <div className="flex items-center gap-1.5">
-              {[1,2,3,4,5].map(i => (
-                <Star key={i} size={14} className="text-accent-400 fill-accent-400" />
-              ))}
-              <span><strong className="text-slate-900">4.9</strong>/5 from learners</span>
-            </div>
-            <span className="dot-separator hidden sm:inline-block" />
-            <span>Trusted by <strong className="text-slate-900">4,800+</strong> partners</span>
-          </div>
-        </div>
 
-        {/* Floating pills — positioned relative to container on large screens */}
-        <div className="hidden lg:block">
-          <FloatingPill
-            icon={TrendingUp}
-            value="₹35,000/mo"
-            label="Avg. starting salary"
-            data-hero-pill=""
-            className="absolute top-32 right-12 opacity-0"
-          />
-          <FloatingPill
-            icon={Users}
-            value="1,00,000+"
-            label="Active learners"
-            data-hero-pill=""
-            className="absolute bottom-40 right-28 opacity-0"
-          />
-          <FloatingPill
-            icon={Star}
-            value="40+ Sectors"
-            label="Career paths available"
-            data-hero-pill=""
-            className="absolute top-48 right-80 opacity-0"
-          />
+            {/* Headline */}
+            <h1 className="font-display font-black text-slate-900 leading-[1.02] tracking-tight mb-6">
+              <div className="overflow-hidden">
+                <span data-hero-word className="inline-block opacity-0 text-5xl sm:text-7xl lg:text-[68px] xl:text-8xl font-black">
+                  Dream. Learn.{' '}
+                </span>
+                <span data-hero-word className="inline-block opacity-0 text-5xl sm:text-7xl lg:text-[68px] xl:text-8xl text-gradient-green font-black">
+                  Certify.
+                </span>
+              </div>
+              <div className="overflow-hidden">
+                <span data-hero-word className="inline-block opacity-0 text-5xl sm:text-7xl lg:text-[68px] xl:text-8xl font-black">
+                  Get{' '}
+                </span>
+                <span data-hero-word className="inline-block opacity-0 text-5xl sm:text-7xl lg:text-[68px] xl:text-8xl text-gradient-hero font-black">
+                  Hired.
+                </span>
+              </div>
+            </h1>
+
+            {/* Subheadline */}
+            <p
+              data-hero-sub
+              className="opacity-0 text-lg sm:text-xl text-slate-500 leading-relaxed max-w-2xl mb-10"
+            >
+              India's most comprehensive platform connecting youth with vocational training,
+              internships, certifications and real employment — powered by the{' '}
+              <span className="text-primary-600 font-semibold">Skill India Mission</span>.
+            </p>
+
+            {/* CTAs */}
+            <div className="flex flex-wrap items-center gap-4 mb-16">
+              <div data-hero-cta className="opacity-0">
+                <Button
+                  as={Link}
+                  to="/explore"
+                  variant="primary"
+                  size="lg"
+                  className="shadow-glow-green"
+                  iconRight={<ArrowRight size={18} />}
+                >
+                  Explore Opportunities
+                </Button>
+              </div>
+              <div data-hero-cta className="opacity-0">
+                <Button
+                  as={Link}
+                  to="/roadmaps"
+                  variant="outline"
+                  size="lg"
+                >
+                  View Career Roadmaps
+                </Button>
+              </div>
+            </div>
+
+            {/* Social proof strip */}
+            <div data-hero-cta className="opacity-0 flex flex-wrap items-center gap-6 text-sm text-slate-500">
+              <div className="flex items-center gap-2">
+                <div className="flex -space-x-2">
+                  {['PS', 'RV', 'AK', 'MF', 'SD'].map((initials, i) => (
+                    <div
+                      key={i}
+                      className="w-8 h-8 rounded-full border-2 border-white flex items-center justify-center text-[10px] font-bold text-white"
+                      style={{ background: ['#10b981','#6366f1','#f59e0b','#10b981','#6366f1'][i] }}
+                    >
+                      {initials}
+                    </div>
+                  ))}
+                </div>
+                <span><strong className="text-slate-900">14.5 Cr+</strong> youth trained</span>
+              </div>
+              <span className="dot-separator hidden sm:inline-block" />
+              <div className="flex items-center gap-1.5">
+                {[1,2,3,4,5].map(i => (
+                  <Star key={i} size={14} className="text-accent-400 fill-accent-400" />
+                ))}
+                <span><strong className="text-slate-900">4.9</strong>/5 from learners</span>
+              </div>
+              <span className="dot-separator hidden sm:inline-block" />
+              <span>Trusted by <strong className="text-slate-900">4,800+</strong> partners</span>
+            </div>
+          </div>
+
+          {/* Right Column: Floating Pills Workspace (never overlaps text) */}
+          <div className="hidden lg:block w-[35%] relative h-[450px] shrink-0">
+            {/* Background glow behind pills */}
+            <div className="absolute inset-0 bg-gradient-radial from-primary-500/5 to-transparent rounded-full blur-3xl -z-10" />
+
+            <FloatingPill
+              icon={TrendingUp}
+              value="₹35,000/mo"
+              label="Avg. starting salary"
+              data-hero-pill=""
+              className="absolute top-8 right-0 opacity-0"
+            />
+            <FloatingPill
+              icon={Star}
+              value="40+ Sectors"
+              label="Career paths available"
+              data-hero-pill=""
+              className="absolute top-1/2 -translate-y-1/2 left-0 opacity-0"
+            />
+            <FloatingPill
+              icon={Users}
+              value="1,00,000+"
+              label="Active learners"
+              data-hero-pill=""
+              className="absolute bottom-8 right-4 opacity-0"
+            />
+          </div>
+
         </div>
       </div>
 
