@@ -4,6 +4,7 @@ import PageWrapper from '../components/layout/PageWrapper';
 import HeroSection      from '../components/home/HeroSection';
 import MissionStrip     from '../components/home/MissionStrip';
 import HowItWorks       from '../components/home/HowItWorks';
+import SmartSkillAdvisor  from '../components/home/SmartSkillAdvisor';
 import StatsSection     from '../components/home/StatsSection';
 import FeaturedPrograms from '../components/home/FeaturedPrograms';
 import SchemesSpotlight from '../components/home/SchemesSpotlight';
@@ -53,6 +54,7 @@ const Home = () => {
         <HeroSection />
         <MissionStrip />
         <HowItWorks />
+        <SmartSkillAdvisor />
         <StatsSection />
         <FeaturedPrograms />
         <SchemesSpotlight />

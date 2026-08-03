@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { Mail, Phone, MapPin, Clock, Send, CheckCircle2, AlertCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, Send, CheckCircle2, AlertCircle, ShieldCheck, HelpCircle } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import PageWrapper from '../components/layout/PageWrapper';
@@ -276,9 +276,17 @@ const Contact = () => {
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-16">
 
             {/* ─── Left: Form ─────────────────────────── */}
-            <div data-anim className="lg:col-span-3 card p-8 lg:p-10">
-              <h2 className="font-display font-bold text-2xl text-slate-900 mb-2">Send Us a Message</h2>
-              <p className="text-slate-500 text-sm mb-8">All fields marked with * are required.</p>
+            <div data-anim className="lg:col-span-3 card p-8 lg:p-10 relative">
+              <div className="flex flex-wrap items-center justify-between gap-3 mb-6 pb-6 border-b border-slate-100">
+                <div>
+                  <h2 className="font-display font-bold text-2xl text-slate-900">Send Us a Message</h2>
+                  <p className="text-slate-500 text-sm mt-0.5">All fields marked with * are required.</p>
+                </div>
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-semibold">
+                  <ShieldCheck size={14} className="text-emerald-600" />
+                  24-Hour Response Guarantee
+                </div>
+              </div>
               <ContactForm />
             </div>
 

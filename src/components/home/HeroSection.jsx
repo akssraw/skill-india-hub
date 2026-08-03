@@ -81,30 +81,36 @@ const HeroSection = () => {
         <div className="max-w-5xl mx-auto">
 
           {/* Top badge */}
-          <div data-hero-badge className="opacity-0">
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-50 border border-primary-100 text-primary-700 text-sm font-semibold mb-6">
+          <div data-hero-badge className="opacity-0 flex flex-wrap items-center gap-3 mb-6">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-50 border border-primary-100/80 text-primary-700 text-sm font-semibold shadow-sm">
               <Sparkles size={14} className="text-primary-500" />
-              India's Premier Skill Development Platform
+              Skill India Mission 2026
               <span className="w-1.5 h-1.5 rounded-full bg-primary-500 animate-pulse" />
             </span>
+            <div className="hidden sm:flex items-center gap-1.5 text-xs font-semibold text-slate-500 bg-slate-100/80 px-3 py-1.5 rounded-full border border-slate-200/60">
+              <span className="text-primary-600">Dream</span> → 
+              <span className="text-secondary-600">Learn</span> → 
+              <span className="text-accent-600">Certify</span> → 
+              <span className="text-slate-900 font-bold">Get Hired</span>
+            </div>
           </div>
 
           {/* Headline */}
-          <h1 className="font-display font-black text-slate-900 leading-[1.02] mb-6">
+          <h1 className="font-display font-black text-slate-900 leading-[1.02] tracking-tight mb-6">
             <div className="overflow-hidden">
-              <span data-hero-word className="inline-block opacity-0 text-6xl sm:text-7xl lg:text-8xl">
-                Unlock{' '}
+              <span data-hero-word className="inline-block opacity-0 text-5xl sm:text-7xl lg:text-8xl font-black">
+                Dream. Learn.{' '}
               </span>
-              <span data-hero-word className="inline-block opacity-0 text-6xl sm:text-7xl lg:text-8xl text-gradient-green">
-                Your
+              <span data-hero-word className="inline-block opacity-0 text-5xl sm:text-7xl lg:text-8xl text-gradient-green font-black">
+                Certify.
               </span>
             </div>
             <div className="overflow-hidden">
-              <span data-hero-word className="inline-block opacity-0 text-6xl sm:text-7xl lg:text-8xl">
-                Skill{' '}
+              <span data-hero-word className="inline-block opacity-0 text-5xl sm:text-7xl lg:text-8xl font-black">
+                Get{' '}
               </span>
-              <span data-hero-word className="inline-block opacity-0 text-6xl sm:text-7xl lg:text-8xl text-gradient-hero">
-                Potential
+              <span data-hero-word className="inline-block opacity-0 text-5xl sm:text-7xl lg:text-8xl text-gradient-hero font-black">
+                Hired.
               </span>
             </div>
           </h1>
