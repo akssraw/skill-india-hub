@@ -99,6 +99,11 @@ src/
 | Each page | 3–9 KB |
 | **Total** | **~163 KB** |
 
+## 📚 Documentation & Compliance
+
+- [AI Usage Documentation](./AI_USAGE.md) - Details on AI tools used during development
+- [Assets Documentation](./ASSETS.md) - Asset inventory, sourcing, and licensing verification
+
 ---
 
 Built for the **AI WebForge Competition** · Powered by the Skill India Mission
